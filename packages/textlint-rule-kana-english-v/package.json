@@ -1,7 +1,7 @@
 {
   "name": "@textlint-ja/textlint-rule-kana-english-v",
   "version": "1.0.0",
-  "description": "原語が「fo」または「pho」の場合は、カタカナでは「フォ」とするのを原則とするtextlintルール",
+  "description": "原語が「v」の場合はカタカナに「ヴ」を使わないのが原則とするtextlintルール",
   "keywords": [
     "textlintrule"
   ],

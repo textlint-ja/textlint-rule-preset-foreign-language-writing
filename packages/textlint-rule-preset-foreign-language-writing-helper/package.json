@@ -1,11 +1,12 @@
 {
-  "name": "@textlint-ja/textlint-rule-kana-english-suffix-y",
+  "name": "@textlint-ja/textlint-rule-preset-foreign-language-writing-helper",
   "version": "1.0.0",
-  "description": "原語の語尾の-er,-or,-arをカタカナでは長音記号「ー」で表わすの原則とするtextlintルール",
+  "description": "A helper for textlint-rule-preset-foreign-language-writing ",
   "keywords": [
-    "textlintrule"
+    "helper",
+    "textlint"
   ],
-  "homepage": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/tree/master/packages/textlint-rule-kana-english-suffix-y/",
+  "homepage": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/tree/master/packages/textlint-rule-preset-foreign-language-writing-helper/",
   "bugs": {
     "url": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/issues"
   },
@@ -20,17 +21,19 @@
     "lib/",
     "src/"
   ],
-  "main": "lib/textlint-rule-kana-english-suffix-y.js",
+  "main": "lib/textlint-rule-preset-foreign-language-writing-helper.js",
+  "types": "lib/textlint-rule-preset-foreign-language-writing-helper.d.ts",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "build": "textlint-scripts build",
+    "build": "cross-env NODE_ENV=production tsc -p .",
+    "clean": "rimraf lib/",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
     "prepublish": "npm run --if-present build",
-    "test": "textlint-scripts test",
-    "watch": "textlint-scripts build --watch"
+    "test": "mocha \"test/**/*.ts\"",
+    "watch": "tsc -p . --watch"
   },
   "prettier": {
     "printWidth": 120,
@@ -38,12 +41,14 @@
     "tabWidth": 4
   },
   "devDependencies": {
-    "@textlint/types": "^1.2.3",
+    "@types/mocha": "^5.2.7",
     "@types/node": "^13.1.1",
+    "cross-env": "^6.0.3",
+    "mocha": "^6.2.2",
     "prettier": "^1.19.1",
-    "textlint-scripts": "^3.0.0",
-    "textlint-tester": "^5.1.11",
+    "rimraf": "^3.0.0",
     "ts-node": "^8.5.4",
+    "ts-node-test-register": "^8.0.1",
     "typescript": "^3.7.4",
     "sudachi-synonyms-dictionary": "^4.1.0"
   },
@@ -52,10 +57,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "textlint-rule-helper": "^2.1.1",
-    "string.prototype.matchall": "^4.0.2",
-    "@textlint-ja/textlint-rule-preset-foreign-language-writing-helper": "^1.0.0"
   }
 }

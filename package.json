@@ -18,13 +18,14 @@
     "versionup:major": "lerna version major --conventional-commits",
     "release": "lerna publish from-package",
     "build": "lerna run build",
-    "test": "lerna run test",
+    "build:lib": "lerna run --scope \"@textlint-ja/*-helper\" build",
+    "test": "yarn run build:lib && lerna run test",
     "clean": "lerna run clean",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'"
   },
   "husky": {
     "hooks": {
-      "precommit": "lint-staged"
+      "pre-commit": "lint-stage"
     }
   },
   "lint-staged": {

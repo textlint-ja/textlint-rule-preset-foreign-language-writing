@@ -1,7 +1,9 @@
 import { TextlintRuleOptions, TextlintRuleReporter } from "@textlint/types";
 import { wrapReportHandler } from "textlint-rule-helper";
-import { createIndex, IndexType } from "./create-index";
-
+import {
+    createKatakanaEnglishIndex,
+    KatakanEnglishIndexType
+} from "@textlint-ja/textlint-rule-preset-foreign-language-writing-helper";
 const matchAll = require("string.prototype.matchall");
 // ・を含む場合はそれぞれ単語として見る
 const KATAKANA = /[ァ-ヴ][ァ-ヴー]*/g;
@@ -16,15 +18,11 @@ export type Options = {
      * デフォルト: false
      */
     disableBuiltinAllows?: boolean;
-}
+};
 /**
  * 慣用的に長音が省略される単語
  */
-const BUILTIN_ALLOW_WORDS = [
-    "ギア",
-    "ジュニア",
-    "エンジニア"
-];
+const BUILTIN_ALLOW_WORDS = ["ギア", "ジュニア", "エンジニア"];
 
 export const DEFAULT_OPTIONS = {
     allows: [],
@@ -32,22 +30,18 @@ export const DEFAULT_OPTIONS = {
 };
 export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (context, options = {}) => {
     const { Syntax, getSource, RuleError, fixer } = context;
-    const indexPromise: Promise<IndexType> = createIndex();
+    const indexPromise: Promise<KatakanEnglishIndexType> = createKatakanaEnglishIndex();
     const allows = options.allows || DEFAULT_OPTIONS.allows;
-    const disableBuiltinAllows = options.disableBuiltinAllows !== undefined ? options.disableBuiltinAllows : DEFAULT_OPTIONS.disableBuiltinAllows;
-    return wrapReportHandler(context,
+    const disableBuiltinAllows =
+        options.disableBuiltinAllows !== undefined
+            ? options.disableBuiltinAllows
+            : DEFAULT_OPTIONS.disableBuiltinAllows;
+    return wrapReportHandler(
+        context,
         {
-            ignoreNodeTypes: [
-                "Link",
-                "BlockQuote",
-                "Emphasis",
-                "Strong",
-                "Code",
-                "Comment",
-                "Html"
-            ]
+            ignoreNodeTypes: ["Link", "BlockQuote", "Emphasis", "Strong", "Code", "Comment", "Html"]
         },
-        (report) => {
+        report => {
             return {
                 async [Syntax.Str](node) {
                     const { midashiMap } = await indexPromise;
@@ -90,14 +84,21 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                             continue;
                         }
                         const endIndex = index + matchKatakana.length - 1;
-                        report(node, new RuleError("原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です", {
-                            index: index,
-                            fix: fixer.insertTextAfterRange([endIndex, endIndex + 1], "ー")
-                        }));
+                        report(
+                            node,
+                            new RuleError(
+                                "原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です",
+                                {
+                                    index: index,
+                                    fix: fixer.insertTextAfterRange([endIndex, endIndex + 1], "ー")
+                                }
+                            )
+                        );
                     }
                 }
             };
-        });
+        }
+    );
 };
 export default {
     linter: report,

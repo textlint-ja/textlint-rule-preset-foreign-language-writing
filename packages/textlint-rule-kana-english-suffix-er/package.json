@@ -55,6 +55,7 @@
   },
   "dependencies": {
     "textlint-rule-helper": "^2.1.1",
-    "string.prototype.matchall": "^4.0.2"
+    "string.prototype.matchall": "^4.0.2",
+    "@textlint-ja/textlint-rule-preset-foreign-language-writing-helper": "^1.0.0"
   }
 }

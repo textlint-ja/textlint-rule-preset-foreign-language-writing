@@ -2,35 +2,25 @@
 
 外来語の書き方を扱うtextlintルールプリセット。
 
-## Install
+## Rules
 
-Install with [npm](https://www.npmjs.com/):
+### [@textlint-ja/textlint-rule-kana-english-suffix-er](packages/textlint-rule-kana-english-suffix-er)
 
-    npm install @textlint-ja/textlint-rule-preset-foreign-language-writing
+> 原語の語尾の-er,-or,-arをカタカナでは長音記号「ー」で表わすの原則とするtextlintルール
 
-## Usage
+### [@textlint-ja/textlint-rule-kana-english-suffix-re](packages/textlint-rule-kana-english-suffix-re)
 
-Via `.textlintrc`(Recommended)
+> 原語の語尾が-reの場合は長音記号「ー」を付けない、原語の語尾が-ture,-sureの場合は原則として長音記号「ー」を付けるtextlintルール
 
-```json
-{
-    "rules": {
-        "@textlint-ja/preset-foreign-language-writing": true
-    }
-}
-```
+### [@textlint-ja/textlint-rule-kana-english-suffix-y](packages/textlint-rule-kana-english-suffix-y)
 
-Via CLI
-
-```
-textlint --rule @textlint-ja/preset-foreign-language-writing README.md
-```
+> 原語の語尾が-yの場合は、カタカナを長音記号「ー」で表わすのを原則とするtextlintルール
 
 ## References
 
 - [記者ハンドブック　第１３版](https://www.kyodo.co.jp/books/isbn/978-4-7641-0687-1/)
 - [テクニカルコミュニケーター協会　> 標準規格](https://www.jtca.org/standardization/) 
-    - [外来語（カタカナ）表記ガイドライン](https://www.jtca.org/standardization/katakana_guide_3_20171222.pdf)
+  - [外来語（カタカナ）表記ガイドライン](https://www.jtca.org/standardization/katakana_guide_3_20171222.pdf)
 
 ## Changelog
 

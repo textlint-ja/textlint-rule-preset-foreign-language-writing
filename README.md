@@ -26,6 +26,10 @@
 
 > 原語の語尾が-yの場合は、カタカナを長音記号「ー」で表わすのを原則とするtextlintルール
 
+### [@textlint-ja/textlint-rule-kana-english-v](packages/textlint-rule-kana-english-v)
+
+> 原語が「fo」または「pho」の場合は、カタカナでは「フォ」とするのを原則とするtextlintルール
+
 ## References
 
 - [文化庁 | 国語施策・日本語教育 | 国語施策情報 | 内閣告示・内閣訓令 | 外来語の表記](https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/naikaku/gairai/index.html)q

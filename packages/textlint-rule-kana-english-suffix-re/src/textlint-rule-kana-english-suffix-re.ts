@@ -23,13 +23,7 @@ export type Options = {
 /**
  * 慣用的に長音が省略される単語
  */
-const BUILTIN_ALLOW_WORDS = [
-    "ギア",
-    // wear
-    "ウェア",
-    "ジュニア",
-    "エンジニア"
-];
+const BUILTIN_ALLOW_WORDS = ["ミニチュア"];
 
 export const DEFAULT_OPTIONS = {
     allows: [],

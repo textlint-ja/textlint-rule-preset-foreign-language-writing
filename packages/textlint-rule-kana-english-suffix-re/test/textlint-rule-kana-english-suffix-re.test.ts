@@ -46,10 +46,7 @@ tester.run("textlint-rule-kana-english-suffix-re", rule, {
         "ストラクチャー(structure)",
         "テクスチャー(texture)",
         // 一般的に長音記号を使わない単語は例外とする
-        "エンジニアは例外",
-        "ウェアは例外",
-        "ギアは例外",
-        "ジュニアは例外",
+        "ミニチュアは例外",
         // オプション
         {
             text: "エディタ",

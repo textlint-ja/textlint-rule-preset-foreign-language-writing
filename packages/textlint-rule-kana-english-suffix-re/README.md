@@ -35,6 +35,7 @@
 シグネチャー(signature)
 ストラクチャー(structure)
 テクスチャー(texture)
+ミニチュアは例外
 ```
 
 **NG**:

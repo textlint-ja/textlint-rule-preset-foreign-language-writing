@@ -55,7 +55,7 @@ textlint --rule @textlint-ja/kana-english-suffix-ware README.md
      */
     allows?: string[];
     /**
-     * 慣用的に長音が省略される単語も不許可にするかどうか
+     * 慣用的に例外とされる単語も不許可にするかどうか
      * デフォルト: false
      */
     disableBuiltinAllows: boolean;

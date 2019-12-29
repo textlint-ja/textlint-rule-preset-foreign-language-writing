@@ -15,7 +15,7 @@ export type Options = {
      */
     allows?: string[];
     /**
-     * 慣用的に長音が省略される単語も不許可にするかどうか
+     * 慣用的に例外とされる単語も不許可にするかどうか
      * ビルトインでいつくかの例外が定義されています
      * デフォルト: false
      */
@@ -28,9 +28,9 @@ export type Options = {
     ignoreNodeTypes?: TxtNodeType[];
 };
 /**
- * 慣用的に長音が省略される単語
+ * 慣用的に例外とされる単語
  */
-const BUILTIN_ALLOW_WORDS = ["サンクチュアリ", "アムネスティ"];
+const BUILTIN_ALLOW_WORDS: string[] = [];
 
 export const DEFAULT_OPTIONS = {
     allows: [],

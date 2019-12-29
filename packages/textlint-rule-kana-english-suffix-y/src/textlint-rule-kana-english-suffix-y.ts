@@ -4,6 +4,7 @@ import {
     createKatakanaEnglishIndex,
     KatakanEnglishIndexType
 } from "@textlint-ja/textlint-rule-preset-foreign-language-writing-helper";
+import { TxtNodeType } from "@textlint/ast-node-types";
 
 const matchAll = require("string.prototype.matchall");
 // ・を含む場合はそれぞれ単語として見る
@@ -19,6 +20,12 @@ export type Options = {
      * デフォルト: false
      */
     disableBuiltinAllows?: boolean;
+    /**
+     * 無視したいTxtNodeのTypesを指定します
+     * See https://textlint.github.io/docs/txtnode.html#type
+     * Default: ["Link", "BlockQuote", "Emphasis", "Strong", "Code", "Comment", "Html"]
+     */
+    ignoreNodeTypes?: TxtNodeType[];
 };
 /**
  * 慣用的に長音が省略される単語
@@ -27,12 +34,14 @@ const BUILTIN_ALLOW_WORDS = ["サンクチュアリ", "アムネスティ"];
 
 export const DEFAULT_OPTIONS = {
     allows: [],
-    disableBuiltinAllows: false
+    disableBuiltinAllows: false,
+    ignoreNodeTypes: ["Link", "BlockQuote", "Emphasis", "Strong", "Code", "Comment", "Html"]
 };
 export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (context, options = {}) => {
     const { Syntax, getSource, RuleError, fixer } = context;
     const indexPromise: Promise<KatakanEnglishIndexType> = createKatakanaEnglishIndex();
     const allows = options.allows || DEFAULT_OPTIONS.allows;
+    const ignoreNodeTypes = options.ignoreNodeTypes || DEFAULT_OPTIONS.ignoreNodeTypes;
     const disableBuiltinAllows =
         options.disableBuiltinAllows !== undefined
             ? options.disableBuiltinAllows
@@ -40,7 +49,7 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
     return wrapReportHandler(
         context,
         {
-            ignoreNodeTypes: ["Link", "BlockQuote", "Emphasis", "Strong", "Code", "Comment", "Html"]
+            ignoreNodeTypes: ignoreNodeTypes
         },
         report => {
             return {

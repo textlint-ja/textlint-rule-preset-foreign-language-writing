@@ -30,13 +30,7 @@ export type Options = {
 /**
  * 慣用的に長音が省略される単語
  */
-const BUILTIN_ALLOW_WORDS = [
-    "ギア",
-    // wear
-    "ウェア",
-    "ジュニア",
-    "エンジニア"
-];
+const BUILTIN_ALLOW_WORDS = ["サンクチュアリ", "アムネスティ"];
 
 export const DEFAULT_OPTIONS = {
     allows: [],
@@ -74,15 +68,16 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                             continue;
                         }
                         // # 判定
-                        // 英単語が -er, -or, -ar
-                        const isErEnglish = englishItems.some(item => {
-                            return item.endsWith("er") || item.endsWith("or") || item.endsWith("ar");
+                        // 英単語が -ware
+                        const isMatchSuffix = englishItems.some(item => {
+                            return item.endsWith("ware");
                         });
-                        if (!isErEnglish) {
+                        if (!isMatchSuffix) {
                             continue;
                         }
-                        // 元のカタカナがー(長音)で終わっていない
-                        if (matchKatakana.endsWith("ー")) {
+                        console.log(matchKatakana, englishItems);
+                        // 元のカタカナが「ウェア」になっている
+                        if (matchKatakana.endsWith("ウェア")) {
                             continue;
                         }
                         // 例外は除外する
@@ -102,13 +97,10 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                         const endIndex = index + matchKatakana.length - 1;
                         report(
                             node,
-                            new RuleError(
-                                "原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です",
-                                {
-                                    index: index,
-                                    fix: fixer.insertTextAfterRange([endIndex, endIndex + 1], "ー")
-                                }
-                            )
+                            new RuleError("原語の語尾が-ware,-wearの場合はカタカナでは「ウェア」とするのが原則です", {
+                                index: index,
+                                fix: fixer.insertTextAfterRange([endIndex, endIndex + 1], "ー")
+                            })
                         );
                     }
                 }

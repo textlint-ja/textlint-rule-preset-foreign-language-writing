@@ -18,6 +18,7 @@
 
 ## References
 
+- [文化庁 | 国語施策・日本語教育 | 国語施策情報 | 内閣告示・内閣訓令 | 外来語の表記](https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/naikaku/gairai/index.html)
 - [記者ハンドブック　第１３版](https://www.kyodo.co.jp/books/isbn/978-4-7641-0687-1/)
 - [テクニカルコミュニケーター協会　> 標準規格](https://www.jtca.org/standardization/) 
   - [外来語（カタカナ）表記ガイドライン](https://www.jtca.org/standardization/katakana_guide_3_20171222.pdf)

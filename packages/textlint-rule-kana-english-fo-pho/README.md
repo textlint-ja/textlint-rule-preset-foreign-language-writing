@@ -1,6 +1,6 @@
 # @textlint-ja/textlint-rule-kana-english-fo-pho
 
-原語が「fo」または「pho」の場合はカタカナでは「フォ」とするのを原則とするtextlintルール。
+原語が「fo」または「pho」の場合は、カタカナでは「フォ」とするのを原則とするtextlintルール。
 
 **OK**:
 

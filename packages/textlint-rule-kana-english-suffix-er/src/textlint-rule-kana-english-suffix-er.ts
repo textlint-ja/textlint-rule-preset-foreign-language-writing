@@ -2,6 +2,7 @@ import { TextlintRuleOptions, TextlintRuleReporter } from "@textlint/types";
 import { wrapReportHandler } from "textlint-rule-helper";
 import { createIndex, IndexType } from "./create-index";
 
+const matchAll = require("string.prototype.matchall");
 // ・を含む場合はそれぞれ単語として見る
 const KATAKANA = /[ァ-ヴ][ァ-ヴー]*/g;
 export type Options = {
@@ -51,7 +52,7 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                 async [Syntax.Str](node) {
                     const { midashiMap } = await indexPromise;
                     const text = getSource(node);
-                    const katakanaItems = text.matchAll(KATAKANA);
+                    const katakanaItems = matchAll(text, KATAKANA);
                     for (const katakanaItem of katakanaItems) {
                         // カタカナかた原語を取得する
                         const matchKatakana = katakanaItem[0];

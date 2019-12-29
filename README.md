@@ -26,6 +26,10 @@ Via CLI
 textlint --rule @textlint-ja/preset-foreign-language-writing README.md
 ```
 
+## Reference
+
+- [テクニカルコミュニケーター協会　> 標準規格](https://www.jtca.org/standardization/) 
+    - [外来語（カタカナ）表記ガイドライン](https://www.jtca.org/standardization/katakana_guide_3_20171222.pdf)
 
 ## Changelog
 

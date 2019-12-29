@@ -9,7 +9,6 @@
     "target": "es2015",
     "sourceMap": true,
     "declaration": true,
-    "noEmit": true,
     "jsx": "preserve",
     "lib": [
       "esnext",
@@ -28,7 +27,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "**/*"
+    "src/**/*"
   ],
   "exclude": [
     ".git",

@@ -1,27 +1,48 @@
 {
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "author": "azu",
-  "license": "MIT",
-  "files": [
-    "bin/",
-    "lib/",
-    "src/"
-  ],
-  "name": "@textlint-ja/textlint-rule-preset-foreign-language-writing",
-  "description": "外来語の書き方を扱うtextlintルールプリセット",
+  "private": true,
+  "name": "root",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "外来語（カタナカ）の書き方を扱うtextlintルールプリセット",
+  "license": "MIT",
+  "author": "azu",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bootstrap": "lerna bootstrap",
+    "versionup": "lerna version --conventional-commits",
+    "versionup:patch": "lerna version patch --conventional-commits",
+    "versionup:minor": "lerna version minor --conventional-commits",
+    "versionup:major": "lerna version major --conventional-commits",
+    "release": "lerna publish from-package",
+    "build": "lerna run build --ignore 'example-*'",
+    "test": "yarn run build && lerna run test --ignore example-perf-benchmark",
+    "clean": "lerna run clean",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'"
   },
-  "publishConfig": {
-    "access": "public"
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing.git"
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": false,
+    "tabWidth": 4
+  },
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "lerna": "^3.20.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "ts-node-test-register": "^8.0.1"
   }
 }

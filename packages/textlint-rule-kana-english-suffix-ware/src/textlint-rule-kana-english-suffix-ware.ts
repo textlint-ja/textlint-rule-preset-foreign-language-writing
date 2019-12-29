@@ -68,14 +68,13 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                             continue;
                         }
                         // # 判定
-                        // 英単語が -ware
+                        // 英単語が -warek -ware
                         const isMatchSuffix = englishItems.some(item => {
-                            return item.endsWith("ware");
+                            return item.endsWith("ware") || item.endsWith("wear");
                         });
                         if (!isMatchSuffix) {
                             continue;
                         }
-                        console.log(matchKatakana, englishItems);
                         // 元のカタカナが「ウェア」になっている
                         if (matchKatakana.endsWith("ウェア")) {
                             continue;
@@ -94,12 +93,13 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                         if (index === undefined) {
                             continue;
                         }
-                        const endIndex = index + matchKatakana.length - 1;
+                        const startIndex = matchKatakana.indexOf("ウエア");
+                        const endIndex = index + matchKatakana.length;
                         report(
                             node,
                             new RuleError("原語の語尾が-ware,-wearの場合はカタカナでは「ウェア」とするのが原則です", {
                                 index: index,
-                                fix: fixer.insertTextAfterRange([endIndex, endIndex + 1], "ー")
+                                fix: fixer.replaceTextRange([startIndex, endIndex], "ウェア")
                             })
                         );
                     }

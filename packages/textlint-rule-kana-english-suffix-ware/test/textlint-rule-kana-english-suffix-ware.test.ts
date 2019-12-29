@@ -30,13 +30,13 @@ tester.run("textlint-rule-kana-english-suffix-ware", rule, {
             errors: [
                 {
                     index: 0,
-                    message: "原語の語尾が-wareの場合はカタカナでは「ウェア」とするのが原則です"
+                    message: "原語の語尾が-ware,-wearの場合はカタカナでは「ウェア」とするのが原則です"
                 }
             ]
         },
         {
-            text: "ゴルフウエアは-wareなので小文字",
-            output: "ゴルフウェアは-wareなので小文字",
+            text: "スポーツウエアは-wareなので小文字",
+            output: "スポーツウェアは-wareなので小文字",
             errors: [
                 {
                     index: 0,

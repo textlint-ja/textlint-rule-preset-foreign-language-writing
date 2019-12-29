@@ -15,6 +15,7 @@ tester.run("textlint-rule-kana-english-suffix-re", rule, {
         "フリーウェア(freeware)",
         "グループウェア(groupware)",
         "ハードウェア(hardware)",
+        "ミドルウェア(middleware)",
         "ピュア(pure)",
         "リタイア(retire)",
         "スコア(score)",
@@ -25,7 +26,6 @@ tester.run("textlint-rule-kana-english-suffix-re", rule, {
         "スペア(spare)",
         "スクエア(square)",
         "ストア(store)",
-        "タイヤ(tire)",
         "ワイヤ(wire)",
         // ただし、-ture, -sureは「ー」を付ける
         "アドベンチャー(adventure)",
@@ -49,9 +49,9 @@ tester.run("textlint-rule-kana-english-suffix-re", rule, {
         "ミニチュアは例外",
         // オプション
         {
-            text: "エディタ",
+            text: "テクスチャ",
             options: {
-                allows: ["エディタ"]
+                allows: ["テクスチャ"]
             }
         }
     ],

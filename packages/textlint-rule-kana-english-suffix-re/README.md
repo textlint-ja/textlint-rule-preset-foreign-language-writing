@@ -7,34 +7,17 @@
 
 ```
 ファームウェア(firmware)
-フリーウェア(freeware)
-グループウェア(groupware)
 ハードウェア(hardware)
 ピュア(pure)
-リタイア(retire)
 スコア(score)
-サファイア(sapphire)
-シビア(severe)
 シェア(share)
 ソフトウェア(software)
 ... -ture, -sure
 アドベンチャー(adventure)
-アーキテクチャー(architecture)
 カルチャー(culture)
-ディスクロージャー(disclosure)
 フィーチャー(feature)
-ファニチャー(furniture)
-ジェスチャー(gesture)
-インフラストラクチャー(infrastructure)
-レクチャー(lecture)
-レジャー(leisure)
-マニュファクチャー(manufacture)
 ネイチャー(nature)
-ピクチャー(picture)
 プレッシャー(pressure)
-シグネチャー(signature)
-ストラクチャー(structure)
-テクスチャー(texture)
 ミニチュアは例外
 ```
 

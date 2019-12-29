@@ -1,7 +1,7 @@
 {
   "name": "@textlint-ja/textlint-rule-kana-english-suffix-re",
   "version": "1.0.0",
-  "description": "原語の語尾の-er,-or,-arをカタカナでは長音記号「ー」で表わすの原則とするtextlintルール",
+  "description": "原語の語尾が-reの場合は長音記号「ー」を付けない、原語の語尾が-ture,-sureの場合は原則として長音記号「ー」を付けるtextlintルール",
   "keywords": [
     "textlintrule"
   ],

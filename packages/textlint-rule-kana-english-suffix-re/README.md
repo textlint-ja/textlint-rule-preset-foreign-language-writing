@@ -1,4 +1,5 @@
 # @textlint-ja/textlint-rule-kana-english-suffix-re
+
 - 原語の語尾が-reの場合は、原則として長音記号「ー」を付けないのが原則です
 - 原語の語尾が-ture,-sureの場合は、原則として長音記号「ー」を付けるのが原則です
 

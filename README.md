@@ -1,6 +1,6 @@
-# @textlint-ja/textlint-rule-preset-foreign-language-writing
+# @textlint-ja/textlint-rule-preset-foreign-language-writing [![Actions Status](https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/workflows/test/badge.svg)](https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/actions?query=workflow%3A"test")
 
-外来語の書き方を扱うtextlintルールプリセット
+外来語の書き方を扱うtextlintルールプリセット。
 
 ## Install
 

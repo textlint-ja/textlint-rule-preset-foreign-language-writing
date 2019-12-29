@@ -17,8 +17,8 @@
     "versionup:minor": "lerna version minor --conventional-commits",
     "versionup:major": "lerna version major --conventional-commits",
     "release": "lerna publish from-package",
-    "build": "lerna run build --ignore 'example-*'",
-    "test": "yarn run build && lerna run test --ignore example-perf-benchmark",
+    "build": "lerna run build",
+    "test": "lerna run test",
     "clean": "lerna run clean",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,css}'"
   },

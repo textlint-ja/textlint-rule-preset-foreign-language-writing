@@ -1,0 +1,27 @@
+{
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "author": "azu",
+  "license": "MIT",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "name": "@textlint-ja/textlint-rule-preset-foreign-language-writing",
+  "description": "外来語の書き方を扱うtextlintルールプリセット",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing.git"
+  }
+}

@@ -1,4 +1,4 @@
-# @textlint-ja/textlint-rule-kana-english-suffix-y
+# @textlint-ja/textlint-rule-kana-english-suffix-re
 
 原語の語尾の-er,-or,-arはカタカナでは長音にするtextlintルール
 
@@ -35,7 +35,7 @@
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install @textlint-ja/textlint-rule-kana-english-suffix-y
+    npm install @textlint-ja/textlint-rule-kana-english-suffix-re
 
 ## Usage
 
@@ -44,7 +44,7 @@ Via `.textlintrc`(Recommended)
 ```json
 {
     "rules": {
-        "@textlint-ja/kana-english-suffix-y": true
+        "@textlint-ja/kana-english-suffix-re": true
     }
 }
 ```
@@ -52,7 +52,7 @@ Via `.textlintrc`(Recommended)
 Via CLI
 
 ```
-textlint --rule @textlint-ja/kana-english-suffix-y README.md
+textlint --rule @textlint-ja/kana-english-suffix-re README.md
 ```
 
 ## Options
@@ -76,7 +76,7 @@ Example:
 ```json
 {
     "rules": {
-        "@textlint-ja/kana-english-suffix-y": {
+        "@textlint-ja/kana-english-suffix-re": {
             "allows": ["エディタ"],
             "disableDefaultAllows": true
         }

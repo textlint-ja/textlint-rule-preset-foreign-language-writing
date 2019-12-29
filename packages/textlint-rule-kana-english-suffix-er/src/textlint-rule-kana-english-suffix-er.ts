@@ -4,6 +4,7 @@ import {
     createKatakanaEnglishIndex,
     KatakanEnglishIndexType
 } from "@textlint-ja/textlint-rule-preset-foreign-language-writing-helper";
+
 const matchAll = require("string.prototype.matchall");
 // ・を含む場合はそれぞれ単語として見る
 const KATAKANA = /[ァ-ヴ][ァ-ヴー]*/g;
@@ -22,7 +23,13 @@ export type Options = {
 /**
  * 慣用的に長音が省略される単語
  */
-const BUILTIN_ALLOW_WORDS = ["ギア", "ジュニア", "エンジニア"];
+const BUILTIN_ALLOW_WORDS = [
+    "ギア",
+    // wear
+    "ウェア",
+    "ジュニア",
+    "エンジニア"
+];
 
 export const DEFAULT_OPTIONS = {
     allows: [],

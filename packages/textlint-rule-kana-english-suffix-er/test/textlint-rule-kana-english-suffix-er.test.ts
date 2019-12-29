@@ -19,6 +19,7 @@ tester.run("textlint-rule-kana-english-suffix-er", rule, {
         "カレンダーはOK",
         // 一般的に長音記号を使わない単語は例外とする
         "エンジニアは例外",
+        "ウェアは例外",
         "ギアは例外",
         "ジュニアは例外",
         // オプション

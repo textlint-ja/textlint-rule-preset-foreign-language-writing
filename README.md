@@ -14,6 +14,10 @@
 
 > 原語の語尾が-reの場合は長音記号「ー」を付けない、原語の語尾が-ture,-sureの場合は原則として長音記号「ー」を付けるtextlintルール
 
+### [@textlint-ja/textlint-rule-kana-english-suffix-ware](packages/textlint-rule-kana-english-suffix-ware)
+
+> 原語の語尾が-ware, -wearの場合は、原則として「ウェア」とするtextlintルール。
+
 ### [@textlint-ja/textlint-rule-kana-english-suffix-y](packages/textlint-rule-kana-english-suffix-y)
 
 > 原語の語尾が-yの場合は、カタカナを長音記号「ー」で表わすのを原則とするtextlintルール

@@ -2,7 +2,7 @@
 
 外来語の書き方を扱うtextlintルールプリセット。
 
-## Rules
+## ルール一覧
 
 ### [@textlint-ja/textlint-rule-kana-english-suffix-er](packages/textlint-rule-kana-english-suffix-er)
 

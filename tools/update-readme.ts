@@ -7,7 +7,7 @@ import { getPackages } from "@monorepo-utils/package-utils";
 import { PackageResult } from "@monorepo-utils/package-utils/lib/get-packages";
 
 const addMarkdown = require("add-text-to-markdown");
-const SectionName = "Rules";
+const SectionName = "ルール一覧";
 const escapeMarkdown = (text: string) => {
     return text.replace(/([\[])/g, "\\$1");
 };

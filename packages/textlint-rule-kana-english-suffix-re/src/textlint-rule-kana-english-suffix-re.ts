@@ -16,7 +16,7 @@ export type Options = {
     allows?: string[];
     /**
      * 慣用的に例外として扱われる単語も不許可にするかどうか
-     * ビルトインでいつくかの例外が定義されています
+     * ビルトインでいくつかの例外が定義されています
      * デフォルト: false
      */
     disableBuiltinAllows?: boolean;
@@ -67,7 +67,7 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                         const suffixPyhonWord = matchKatakana.endsWith("ー") ? "" : matchKatakana + "ー";
                         const nonSuffixPyhonWord = matchKatakana.endsWith("ー")
                             ? matchKatakana.slice(0, matchKatakana.length - 1)
-                            : "undefined";
+                            : "";
                         const englishItems = (midashiMap.get(matchKatakana) || [])
                             .concat(midashiMap.get(suffixPyhonWord) || [])
                             .concat(midashiMap.get(nonSuffixPyhonWord) || []);

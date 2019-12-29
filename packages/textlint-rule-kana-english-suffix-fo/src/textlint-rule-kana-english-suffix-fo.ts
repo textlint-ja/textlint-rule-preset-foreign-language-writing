@@ -30,7 +30,17 @@ export type Options = {
 /**
  * 慣用的に例外とされる単語
  */
-const BUILTIN_ALLOW_WORDS: string[] = [];
+const BUILTIN_ALLOW_WORDS: string[] = [
+    "ホルマリン",
+    "メガホン",
+    "テレホン",
+    "イヤホン",
+    "インターホン",
+    "ヘッドホン",
+    // 同じカタカナで示すものが違うときに、表記揺れがある単語なので限定しない
+    // ソフトウェアについてはプラットフォームが使われる
+    "プラットホーム"
+];
 
 export const DEFAULT_OPTIONS = {
     allows: [],
@@ -63,20 +73,21 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                         if (!matchKatakana) {
                             continue;
                         }
-                        const englishItems = midashiMap.get(matchKatakana);
+                        const foWord = matchKatakana.includes("ホ") ? matchKatakana.replace("ホ", "フォ") : "";
+                        const englishItems = (midashiMap.get(matchKatakana) || []).concat(midashiMap.get(foWord) || []);
                         if (!englishItems) {
                             continue;
                         }
                         // # 判定
-                        // 英単語が -warek -ware
-                        const isMatchSuffix = englishItems.some(item => {
-                            return item.endsWith("ware") || item.endsWith("wear");
+                        // 英単語が -fo-, -pho-
+                        const matchEnglishWords = englishItems.filter(item => {
+                            return item.includes("fo") || item.endsWith("pho");
                         });
-                        if (!isMatchSuffix) {
+                        if (matchEnglishWords.length === 0) {
                             continue;
                         }
-                        // 元のカタカナが「ウェア」になっている
-                        if (matchKatakana.endsWith("ウェア")) {
+                        // 元のカタカナが「フォ」になっているならOK
+                        if (matchKatakana.includes("フォ")) {
                             continue;
                         }
                         // 例外は除外する
@@ -93,15 +104,32 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                         if (index === undefined) {
                             continue;
                         }
-                        const startIndex = matchKatakana.indexOf("ウエア");
-                        const endIndex = index + matchKatakana.length;
-                        report(
-                            node,
-                            new RuleError("原語の語尾が-ware,-wearの場合はカタカナでは「ウェア」とするのが原則です", {
-                                index: index,
-                                fix: fixer.replaceTextRange([startIndex, endIndex], "ウェア")
-                            })
-                        );
+                        // 単語中に"ホ"が複数ある場合に位置を特定できない問題があるので、1つの場合のみをfixにする
+                        const hoCount = matchKatakana.split("ホ").length - 1;
+                        // 2つ以上ある場合は修正はしない
+                        if (hoCount >= 2) {
+                            return report(
+                                node,
+                                new RuleError(
+                                    "原語が「fo」または「pho」の場合はカタカナでは「フォ」とするのが原則です",
+                                    {
+                                        index: index
+                                    }
+                                )
+                            );
+                        } else {
+                            const startIndex = matchKatakana.indexOf("ホ");
+                            report(
+                                node,
+                                new RuleError(
+                                    "原語が「fo」または「pho」の場合はカタカナでは「フォ」とするのが原則です",
+                                    {
+                                        index: index,
+                                        fix: fixer.replaceTextRange([startIndex, startIndex + 1], "フォ")
+                                    }
+                                )
+                            );
+                        }
                     }
                 }
             };

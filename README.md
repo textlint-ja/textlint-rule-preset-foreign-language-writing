@@ -10,6 +10,10 @@
 
 > 原語の語尾の-er,-or,-arをカタカナでは長音記号「ー」で表わすの原則とするtextlintルール
 
+### [@textlint-ja/textlint-rule-kana-english-suffix-fo](packages/textlint-rule-kana-english-suffix-fo)
+
+> 原語の語尾が-ware, -wearの場合は、原則として「ウェア」とするtextlintルール。
+
 ### [@textlint-ja/textlint-rule-kana-english-suffix-re](packages/textlint-rule-kana-english-suffix-re)
 
 > 原語の語尾が-reの場合は長音記号「ー」を付けない、原語の語尾が-ture,-sureの場合は原則として長音記号「ー」を付けるtextlintルール

@@ -16,7 +16,7 @@ export type Options = {
     allows?: string[];
     /**
      * 慣用的に長音が省略される単語も不許可にするかどうか
-     * ビルトインでいつくかの例外が定義されています
+     * ビルトインでいくつかの例外が定義されています
      * デフォルト: false
      */
     disableBuiltinAllows?: boolean;

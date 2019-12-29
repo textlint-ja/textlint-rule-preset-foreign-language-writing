@@ -36,7 +36,7 @@ tester.run("textlint-rule-kana-english-suffix-er", rule, {
             errors: [
                 {
                     index: 0,
-                    message: "原語の語尾の-er,-or,-arは、カタカナでは長音記号「ー」で表わすのが原則です"
+                    message: "原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です"
                 }
             ]
         },
@@ -46,7 +46,7 @@ tester.run("textlint-rule-kana-english-suffix-er", rule, {
             errors: [
                 {
                     index: 0,
-                    message: "原語の語尾の-er,-or,-arは、カタカナでは長音記号「ー」で表わすのが原則です"
+                    message: "原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です"
                 }
             ]
         },
@@ -56,7 +56,17 @@ tester.run("textlint-rule-kana-english-suffix-er", rule, {
             errors: [
                 {
                     index: 0,
-                    message: "原語の語尾の-er,-or,-arは、カタカナでは長音記号「ー」で表わすのが原則です"
+                    message: "原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です"
+                }
+            ]
+        },
+        {
+            text: "フィルタは-erなので長音",
+            output: "フィルターは-erなので長音",
+            errors: [
+                {
+                    index: 0,
+                    message: "原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です"
                 }
             ]
         },
@@ -66,7 +76,7 @@ tester.run("textlint-rule-kana-english-suffix-er", rule, {
             errors: [
                 {
                     index: 5,
-                    message: "原語の語尾の-er,-or,-arは、カタカナでは長音記号「ー」で表わすのが原則です"
+                    message: "原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です"
                 }
             ]
         },
@@ -76,7 +86,7 @@ tester.run("textlint-rule-kana-english-suffix-er", rule, {
             errors: [
                 {
                     index: 4,
-                    message: "原語の語尾の-er,-or,-arは、カタカナでは長音記号「ー」で表わすのが原則です"
+                    message: "原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です"
                 }
             ]
         }

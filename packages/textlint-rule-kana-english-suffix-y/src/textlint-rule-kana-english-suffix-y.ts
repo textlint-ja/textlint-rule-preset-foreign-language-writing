@@ -21,9 +21,8 @@ export type Options = {
  * 慣用的に長音が省略される単語
  */
 const BUILTIN_ALLOW_WORDS = [
-    "ギア",
-    "ジュニア",
-    "エンジニア"
+    "サンクチュアリ",
+    "アムネスティ"
 ];
 
 export const DEFAULT_OPTIONS = {
@@ -64,11 +63,11 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                             continue;
                         }
                         // # 判定
-                        // 英単語が -er, -or, -ar
-                        const isErEnglish = englishItems.some(item => {
-                            return item.endsWith("er") || item.endsWith("or") || item.endsWith("ar");
+                        // 英単語が -y
+                        const isSuffixYEnglish = englishItems.some(item => {
+                            return item.endsWith("y");
                         });
-                        if (!isErEnglish) {
+                        if (!isSuffixYEnglish) {
                             continue;
                         }
                         // 元のカタカナがー(長音)で終わっていない
@@ -90,7 +89,7 @@ export const report: TextlintRuleReporter<TextlintRuleOptions<Options>> = (conte
                             continue;
                         }
                         const endIndex = index + matchKatakana.length - 1;
-                        report(node, new RuleError("原語の語尾が-er,-or,-ar場合はカタカナでは長音記号「ー」で表わすのが原則です", {
+                        report(node, new RuleError("原語の語尾が-yの場合はカタカナでは長音記号「ー」で表わすのが原則です", {
                             index: index,
                             fix: fixer.insertTextAfterRange([endIndex, endIndex + 1], "ー")
                         }));

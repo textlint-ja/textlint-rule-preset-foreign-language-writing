@@ -1,0 +1,60 @@
+{
+  "name": "@textlint-ja/textlint-rule-kana-english-suffix-y",
+  "version": "1.0.0",
+  "description": "原語の語尾の-er,-or,-arをカタカナでは長音記号「ー」で表わすの原則とするtextlintルール",
+  "keywords": [
+    "textlintrule"
+  ],
+  "homepage": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/tree/master/packages/textlint-rule-kana-english-suffix-y/",
+  "bugs": {
+    "url": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing.git"
+  },
+  "license": "MIT",
+  "author": "azu",
+  "files": [
+    "bin/",
+    "lib/",
+    "src/"
+  ],
+  "main": "lib/textlint-rule-kana-english-suffix-y.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "textlint-scripts build",
+    "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
+    "prepublish": "npm run --if-present build",
+    "test": "textlint-scripts test",
+    "watch": "textlint-scripts build --watch"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": false,
+    "tabWidth": 4
+  },
+  "devDependencies": {
+    "@textlint/types": "^1.2.3",
+    "@types/node": "^13.1.1",
+    "prettier": "^1.19.1",
+    "textlint-scripts": "^3.0.0",
+    "textlint-tester": "^5.1.11",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.4",
+    "sudachi-synonyms-dictionary": "^4.1.0"
+  },
+  "peerDependencies": {
+    "sudachi-synonyms-dictionary": "*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "textlint-rule-helper": "^2.1.1",
+    "string.prototype.matchall": "^4.0.2"
+  }
+}

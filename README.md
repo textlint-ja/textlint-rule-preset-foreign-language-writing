@@ -6,13 +6,13 @@
 
 ## ルール一覧
 
+### [@textlint-ja/textlint-rule-kana-english-fo-pho](packages/textlint-rule-kana-english-fo-pho)
+
+> 原語が「fo」または「pho」の場合はカタカナでは「フォ」とするのを原則とするtextlintルール
+
 ### [@textlint-ja/textlint-rule-kana-english-suffix-er](packages/textlint-rule-kana-english-suffix-er)
 
 > 原語の語尾の-er,-or,-arをカタカナでは長音記号「ー」で表わすの原則とするtextlintルール
-
-### [@textlint-ja/textlint-rule-kana-english-suffix-fo](packages/textlint-rule-kana-english-suffix-fo)
-
-> 原語の語尾が-ware, -wearの場合は、原則として「ウェア」とするtextlintルール。
 
 ### [@textlint-ja/textlint-rule-kana-english-suffix-re](packages/textlint-rule-kana-english-suffix-re)
 

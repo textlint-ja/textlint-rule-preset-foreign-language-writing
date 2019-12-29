@@ -1,11 +1,11 @@
 {
-  "name": "@textlint-ja/textlint-rule-kana-english-suffix-fo",
+  "name": "@textlint-ja/textlint-rule-kana-english-fo-pho",
   "version": "1.0.0",
-  "description": "原語の語尾が-ware, -wearの場合は、原則として「ウェア」とするtextlintルール。",
+  "description": "原語が「fo」または「pho」の場合はカタカナでは「フォ」とするのを原則とするtextlintルール",
   "keywords": [
     "textlintrule"
   ],
-  "homepage": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/tree/master/packages/textlint-rule-kana-english-suffix-fo/",
+  "homepage": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/tree/master/packages/textlint-rule-kana-english-fo-pho/",
   "bugs": {
     "url": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/issues"
   },
@@ -20,7 +20,7 @@
     "lib/",
     "src/"
   ],
-  "main": "lib/textlint-rule-kana-english-suffix-fo.js",
+  "main": "lib/textlint-rule-kana-english-fo-pho.js",
   "directories": {
     "lib": "lib",
     "test": "test"

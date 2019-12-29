@@ -1,32 +1,39 @@
-# @textlint-ja/textlint-rule-kana-english-suffix-fo
+# @textlint-ja/textlint-rule-kana-english-fo-pho
 
-原語の語尾が-ware, -wearの場合は、原則として「ウェア」とするtextlintルール。
+原語が「fo」または「pho」の場合はカタカナでは「フォ」とするのを原則とするtextlintルール。
 
 **OK**:
 
 ```
-ソフトウェア(software)
-スパイウェア(spyware)
-マルウェア(malware)
-スポーツウェア(sports wear)
-ゴルフウェア(gold wear)
-マウンテンウェア(mountain wear)
-カジュアルウェア(casual wear)
+インフォ(info)
+インフォメーション(information)
+フォーム(form)
+フォント(font)
+ハイホン(hyphon)
+フォロー(follow)
+アイフォン(iPhone)
+フォト(photo)
+フォトグラファー(photology)
+フォビア(phobia)
+プラットホーム(platform)は例外で、プラットフォームでもいい
+ホーム(homu)は例外、フォームと区別できない
+テレホン(telephone)は例外
+イヤホン(earphone)は例外
+メガホン(megaphon)は例外
 ```
 
 **NG**:
 
 ```
-ソフトウエアは-wareなので小文字
-ゴルフウエアは-wareなので小文字
+インホメーションは-fo-なのでフォを使う
+パホーマンスは-fo-なのでフォを使う
 ```
-
 
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install @textlint-ja/textlint-rule-kana-english-suffix-fo
+    npm install @textlint-ja/textlint-rule-kana-english-fo-pho
 
 ## Usage
 
@@ -35,7 +42,7 @@ Via `.textlintrc`(Recommended)
 ```json
 {
     "rules": {
-        "@textlint-ja/kana-english-suffix-fo": true
+        "@textlint-ja/kana-english-fo-pho": true
     }
 }
 ```
@@ -43,7 +50,7 @@ Via `.textlintrc`(Recommended)
 Via CLI
 
 ```
-textlint --rule @textlint-ja/kana-english-suffix-fo README.md
+textlint --rule @textlint-ja/kana-english-fo-pho README.md
 ```
 
 ## Options
@@ -67,7 +74,7 @@ Example:
 ```json
 {
     "rules": {
-        "@textlint-ja/kana-english-suffix-fo": {
+        "@textlint-ja/kana-english-fo-pho": {
             "allows": ["イヤフォン"],
             "disableDefaultAllows": true
         }

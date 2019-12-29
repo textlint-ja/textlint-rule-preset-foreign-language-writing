@@ -92,7 +92,7 @@ Example:
 {
     "rules": {
         "@textlint-ja/kana-english-suffix-re": {
-            "allows": ["エディタ"],
+            "allows": ["フリーウェア"],
             "disableDefaultAllows": true
         }
     }

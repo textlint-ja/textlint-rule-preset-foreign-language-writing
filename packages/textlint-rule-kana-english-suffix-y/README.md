@@ -68,7 +68,7 @@ Example:
 {
     "rules": {
         "@textlint-ja/kana-english-suffix-y": {
-            "allows": ["エディタ"],
+            "allows": ["メモリ"],
             "disableDefaultAllows": true
         }
     }

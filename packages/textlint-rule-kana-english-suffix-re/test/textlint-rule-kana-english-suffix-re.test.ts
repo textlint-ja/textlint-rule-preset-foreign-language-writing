@@ -61,8 +61,8 @@ tester.run("textlint-rule-kana-english-suffix-re", rule, {
     invalid: [
         // -re は「ー」を付けない
         {
-            text: "フリーウェアー",
-            output: "フリーウェア",
+            text: "フリーウェアー(freeware)",
+            output: "フリーウェア(freeware)",
             errors: [
                 {
                     index: 0,
@@ -71,8 +71,8 @@ tester.run("textlint-rule-kana-english-suffix-re", rule, {
             ]
         },
         {
-            text: "スクエアー",
-            output: "スクエア",
+            text: "スクエアー(square)",
+            output: "スクエア(square)",
             errors: [
                 {
                     index: 0,
@@ -81,8 +81,8 @@ tester.run("textlint-rule-kana-english-suffix-re", rule, {
             ]
         },
         {
-            text: "ストアー",
-            output: "ストア",
+            text: "ストアー(store)",
+            output: "ストア(store)",
             errors: [
                 {
                     index: 0,
@@ -92,8 +92,18 @@ tester.run("textlint-rule-kana-english-suffix-re", rule, {
         },
         // -ture,-sureは「ー」をつける
         {
-            text: "カルチャ",
-            output: "カルチャー",
+            text: "カルチャ(culture)",
+            output: "カルチャー(culture)",
+            errors: [
+                {
+                    index: 0,
+                    message: "原語の語尾が-ture,-sureの場合は、原則として長音記号「ー」を付けるのが原則です"
+                }
+            ]
+        },
+        {
+            text: "プレッシャ(pressure)",
+            output: "プレッシャー(pressure)",
             errors: [
                 {
                     index: 0,

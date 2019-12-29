@@ -1,34 +1,49 @@
 # @textlint-ja/textlint-rule-kana-english-suffix-re
-
-原語の語尾の-er,-or,-arはカタカナでは長音にするtextlintルール
+- 原語の語尾が-reの場合は、原則として長音記号「ー」を付けないのが原則です
+- 原語の語尾が-ture,-sureの場合は、原則として長音記号「ー」を付けるのが原則です
 
 **OK**:
 
 ```
-エディターはOK
-エントリーはOK
-サーバーはOK
-マネージャーはOK
-メーカーはOK
-モーターはOK
-プロジェクターはOK
-リボルバーはOK
-レーダーはOK
-モジュラーはOK
-カレンダーはOK
-エンジニアは例外
-ギアは例外
-ジュニアは例外
+ファームウェア(firmware)
+フリーウェア(freeware)
+グループウェア(groupware)
+ハードウェア(hardware)
+ピュア(pure)
+リタイア(retire)
+スコア(score)
+サファイア(sapphire)
+シビア(severe)
+シェア(share)
+ソフトウェア(software)
+... -ture, -sure
+アドベンチャー(adventure)
+アーキテクチャー(architecture)
+カルチャー(culture)
+ディスクロージャー(disclosure)
+フィーチャー(feature)
+ファニチャー(furniture)
+ジェスチャー(gesture)
+インフラストラクチャー(infrastructure)
+レクチャー(lecture)
+レジャー(leisure)
+マニュファクチャー(manufacture)
+ネイチャー(nature)
+ピクチャー(picture)
+プレッシャー(pressure)
+シグネチャー(signature)
+ストラクチャー(structure)
+テクスチャー(texture)
 ```
 
 **NG**:
 
 ```
-エディタは-erなので長音
-サーバは-erなので長音
-ユーザは-erなので長音
-ローカル・サーバは-erなので長音
-ネットでコンピュータを買う
+フリーウェアー(freeware)
+スクエアー(square)
+ストアー(store)
+カルチャ(culture)
+プレッシャ(pressure)
 ```
 
 ## Install
@@ -64,7 +79,7 @@ textlint --rule @textlint-ja/kana-english-suffix-re README.md
      */
     allows?: string[];
     /**
-     * 慣用的に長音が省略される単語も不許可にするかどうか
+     * 慣用的に例外として扱われる単語も不許可にするかどうか
      * デフォルト: false
      */
     disableBuiltinAllows: boolean;

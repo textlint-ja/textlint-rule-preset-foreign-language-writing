@@ -1,11 +1,11 @@
 {
-  "name": "@textlint-ja/textlint-rule-kana-english-v",
+  "name": "@textlint-ja/textlint-rule-no-kana-english-v",
   "version": "1.0.0",
   "description": "原語が「v」の場合はカタカナに「ヴ」を使わないのが原則とするtextlintルール",
   "keywords": [
     "textlintrule"
   ],
-  "homepage": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/tree/master/packages/textlint-rule-kana-english-v/",
+  "homepage": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/tree/master/packages/textlint-rule-no-kana-english-v/",
   "bugs": {
     "url": "https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/issues"
   },
@@ -20,7 +20,7 @@
     "lib/",
     "src/"
   ],
-  "main": "lib/textlint-rule-kana-english-v.js",
+  "main": "lib/textlint-rule-no-kana-english-v.js",
   "directories": {
     "lib": "lib",
     "test": "test"

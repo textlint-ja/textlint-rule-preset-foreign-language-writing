@@ -1,4 +1,4 @@
-# @textlint-ja/textlint-rule-kana-english-v
+# @textlint-ja/textlint-rule-no-kana-english-v
 
 原語が「v」の場合はカタカナに「ヴ」を使わないのが原則とするtextlintルールです。
 
@@ -23,7 +23,7 @@
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install @textlint-ja/textlint-rule-kana-english-v
+    npm install @textlint-ja/textlint-rule-no-kana-english-v
 
 ## Usage
 
@@ -32,7 +32,7 @@ Via `.textlintrc`(Recommended)
 ```json
 {
     "rules": {
-        "@textlint-ja/kana-english-v": true
+        "@textlint-ja/no-kana-english-v": true
     }
 }
 ```
@@ -40,7 +40,7 @@ Via `.textlintrc`(Recommended)
 Via CLI
 
 ```
-textlint --rule @textlint-ja/kana-english-v README.md
+textlint --rule @textlint-ja/no-kana-english-v README.md
 ```
 
 ## Options
@@ -64,7 +64,7 @@ Example:
 ```json
 {
     "rules": {
-        "@textlint-ja/kana-english-v": {
+        "@textlint-ja/no-kana-english-v": {
             "allows": ["ヴィデオ"],
             "disableDefaultAllows": true
         }

@@ -2,7 +2,7 @@ import TextLintTester from "textlint-tester";
 
 const tester = new TextLintTester();
 // rule
-import rule from "../src/textlint-rule-kana-english-v";
+import rule from "../src/textlint-rule-no-kana-english-v";
 // ruleName, rule, { valid, invalid }
 tester.run("textlint-rule-no-kana-english-v", rule, {
     valid: [

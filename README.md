@@ -26,7 +26,7 @@
 
 > 原語の語尾が-yの場合は、カタカナを長音記号「ー」で表わすのを原則とするtextlintルール
 
-### [@textlint-ja/textlint-rule-kana-english-v](packages/textlint-rule-kana-english-v)
+### [@textlint-ja/textlint-rule-no-kana-english-v](packages/textlint-rule-no-kana-english-v)
 
 > 原語が「v」の場合はカタカナに「ヴ」を使わないのが原則とするtextlintルール
 

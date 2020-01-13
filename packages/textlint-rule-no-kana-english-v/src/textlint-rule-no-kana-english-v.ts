@@ -38,7 +38,8 @@ const convertV = (word: string) => {
         .replace(/ヴィ/g, "ビ")
         .replace(/ヴゥ/g, "ブ")
         .replace(/ヴェ/g, "ベ")
-        .replace(/ヴォ/g, "ボ");
+        .replace(/ヴォ/g, "ボ")
+        .replace(/ヴュ/g, "ビュ");
 };
 export const DEFAULT_OPTIONS = {
     allows: [],

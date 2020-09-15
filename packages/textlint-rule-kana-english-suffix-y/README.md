@@ -75,6 +75,10 @@ Example:
 }
 ```
 
+## References
+
+- [外来語（カタカナ）表記ガイドライン](https://www.jtca.org/standardization/katakana_guide_3_20171222.pdf)
+
 ## Changelog
 
 See [Releases page](https://github.com/textlint-ja/textlint-rule-preset-foreign-language-writing/releases).

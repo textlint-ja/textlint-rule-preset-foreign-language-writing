@@ -74,7 +74,6 @@ Example:
 
 ## References
 
-- [『WIRED』日本版、ついに「ヴ」を廃止──新たに「ヷ」「ヸ」「ヹ」「ヺ」を採用へ｜WIRED.jp](https://wired.jp/2019/04/01/aprilfool-2019/)
 - [国名表記「ヴ」消える　変更法案、衆院で可決　　:日本経済新聞](https://www.nikkei.com/article/DGXMZO42662930Z10C19A3PP8000/)
 
 ## Changelog
